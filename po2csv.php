@@ -13,7 +13,7 @@ while( ($line = fgets($file)) ) {
     } else if(preg_match('/msgstr\s"(.*)"/U', $line, $matches)) {
         $msgstr = '"'.$matches[1].'"';
         
-        if($msgstr != '""' && $msgid != '""') { 
+        if($msgid != '""') { 
             echo $msgid.';'.$msgstr."\n";
         } else {
             $msgid = false;
